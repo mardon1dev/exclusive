@@ -11,7 +11,7 @@ const Hero = () => {
         <div className='container'>
             <div className='hero__main'>
                 <div className='row'>
-                    <div className='col-4'>
+                    <div className='col-lg-4 col-12'>
                         <ul className="allproducts">
                             <li className = "allproducts__item">
                                 <Link className="allproducts__item--link">
@@ -61,14 +61,17 @@ const Hero = () => {
                         </ul>
 
                     </div>
-                    <div className="col-8">
+                    <div className="col-12 col-lg-8">
                         <div className="ads">
                             <Carousel className="ads-carousel">
                                 {
-                                    data.products.slice(1,5)?.map((item, index) =>{
+                                    data.products.slice(5,9)?.map((item, index) =>{
                                         return(
                                             <CarouselItem key={`carousel-${index}`}>
-                                                <img src={item.thumbnail} alt={item.title} className="w-100"/>
+                                                <img src={item.thumbnail} alt={item.title}/>
+                                                <Link>
+                                                    <span>{item.title}</span>
+                                                </Link>
                                             </CarouselItem>
                                         )
                                     })
